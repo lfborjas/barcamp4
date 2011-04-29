@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Javascript: El lenguaje más incomprendido</title>
+
+  <link rel="stylesheet" href="./css/reset.css" type="text/css"/>
+  <link rel="stylesheet" href="./css/showoff.css" type="text/css"/>
+  <link rel="stylesheet" href="./css/syntax/bw.css" type="text/css"/>
+
+  <script type="text/javascript" src="./js/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="./js/jquery-print.js"></script>
+  <script type="text/javascript" src="./js/jquery.batchImageLoad.js"></script>
+
+  <script type="text/javascript" src="./js/jquery.doubletap-0.1.js"></script>
+
+  <script type="text/javascript" src="./js/fg.menu.js"></script>
+  <script type="text/javascript" src="./js/showoff.js"></script>
+  <script type="text/javascript" src="./js/jTypeWriter.js"> </script>
+  <script type="text/javascript" src="./js/core.js"></script>
+  <script type="text/javascript" src="./js/showoffcore.js"></script>
+
+  <link type="text/css" href="./css/fg.menu.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/theme/ui.all.css" media="screen" rel="stylesheet" />
+
+  
+
+  
+
+  <script type="text/javascript">
+  $(function(){
+    setupPreso(false, './');
+  });
+  </script>
+</head>
+
+<body>
+
+
+<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="navmenu"><span class="ui-icon ui-icon-triangle-1-s"></span>slides</a>
+<div id="navigation" class="hidden"></div>
+
+<div id="help">
+  <table>
+    <tr><td class="key">space, &rarr;</td><td>next slide</td></tr>
+    <tr><td class="key">&larr;</td><td>previous slide</td></tr>
+    <tr><td class="key">d</td><td>debug mode</td></tr>
+    <tr><td class="key">## &lt;ret&gt;</td><td>go to slide #</td></tr>
+    <tr><td class="key">c</td><td>table of contents (vi)</td></tr>
+    <tr><td class="key">f</td><td>toggle footer</td></tr>
+    <tr><td class="key">r</td><td>reload slides</td></tr>
+    <tr><td class="key">z</td><td>toggle help (this)</td></tr>
+  </table>
+</div>
+
+<div class="buttonNav">
+  <input type="submit" onClick="prevStep();" value="prev"/>
+  <input type="submit" onClick="nextStep();" value="next"/>
+</div>
+
+<div id="preso">loading presentation...</div>
+<div id="footer">
+  <span id="slideInfo"></span>
+  <span id="debugInfo"></span>
+</div>
+
+<div id="slides" class="offscreen" style="display:none;">
+<div class="slide" data-transition="none"><div class="content" ref="basics/syntax/1">
+<h1>Javascript: el lenguaje m&#xE1;s incomprendido del mundo</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="basics/syntax/2">
+<ul>
+<li>No tiene <em>nada</em> que ver con java</li>
+<li>Es un lenguaje de programaci&#xF3;n din&#xE1;mico orientado a objetos
+(lo hace mejor que java)</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/syntax/3">
+<h1>Variables y valores</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="basics/syntax/4">
+<pre class="executable"><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">//Number</span>
+    <span class="nx">b</span> <span class="o">=</span> <span class="mf">2.0e10</span><span class="p">,</span> <span class="c1">//Number</span>
+    <span class="nx">c</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">//Boolean</span>
+    <span class="nx">d</span> <span class="o">=</span> <span class="s1">'hola'</span><span class="p">,</span> <span class="c1">//String</span>
+    <span class="nx">e</span> <span class="o">=</span> <span class="s2">"mundo"</span> <span class="c1">//String</span>
+    <span class="nx">f</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span><span class="c1">//Date</span>
+    <span class="nx">g</span> <span class="o">=</span> <span class="sr">/[a-z]+/</span> <span class="c1">//RegExp</span>
+    <span class="nx">h</span><span class="p">,</span> <span class="c1">//undefined (nulidad impl&#xED;cita)</span>
+    <span class="nx">i</span> <span class="o">=</span> <span class="kc">null</span> <span class="c1">//nulidad expl&#xED;cita</span></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="basics/syntax/5">
+<ul>
+<li>No hay tipos expl&#xED;citos</li>
+<li>Si necesit&#xE1;s una variable: <code>var</code></li>
+<li>Omitir <code>var</code> la hace &#xA1;<em>global</em>!</li>
+<li>Punto y coma es <em>opcional</em></li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/syntax/6">
+<h1>PUNTO Y COMA ES OPCIONAL</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="basics/syntax/7">
+<p><img src="./file/basics/fuuu.jpg" width="639" height="483" alt="crap"/></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="basics/syntax/8">
+<ul>
+<li>S&#xF3;lo se necesita para:</li>
+<li>Cuando ten&#xE9;s varias sentencias en una l&#xED;nea</li>
+<li>Cuando una l&#xED;nea se podr&#xED;a interpretar como
+la continuaci&#xF3;n de la anterior</li>
+<li>Cuando quer&#xE9;s un bloque vac&#xED;o</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="basics/syntax/9">
+<pre class="executable"><span class="nx">a</span> <span class="o">=</span> <span class="nx">b</span> <span class="o">+</span> <span class="nx">c</span>
+<span class="p">(</span><span class="nx">d</span> <span class="o">+</span> <span class="nx">e</span><span class="p">).</span><span class="nx">toString</span><span class="p">()</span>
+<span class="nx">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">].</span><span class="nx">concat</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">])</span>
+</pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="basics/syntax/10">
+<pre class="executable"><span class="nx">a</span> <span class="o">=</span> <span class="nx">b</span> <span class="o">+</span> <span class="nx">c</span><span class="p">(</span><span class="nx">d</span><span class="o">+</span><span class="nx">e</span><span class="p">).</span><span class="nx">toString</span><span class="p">()</span>
+<span class="nx">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">].</span><span class="nx">concat</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">])</span>
+</pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="basics/syntax/11">
+<pre class="executable"><span class="nx">a</span> <span class="o">=</span> <span class="nx">b</span> <span class="o">+</span> <span class="nx">c</span><span class="p">;</span>
+<span class="p">(</span><span class="nx">d</span> <span class="o">+</span> <span class="nx">e</span><span class="p">).</span><span class="nx">toString</span><span class="p">()</span>
+<span class="nx">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">];</span>
+<span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">].</span><span class="nx">concat</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">])</span>
+</pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/syntax/12">
+<h2>L&#xF3;gica</h2>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="basics/syntax/13">
+<pre class="executable"><span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">||</span> <span class="s2">""</span>  <span class="o">||</span> <span class="mi">666</span>
+<span class="c1">//x es 666</span>
+<span class="nx">y</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span> <span class="o">||</span> <span class="s2">"uff"</span>
+<span class="nb">Boolean</span><span class="p">(</span><span class="nx">y</span><span class="p">)</span> <span class="c1">// true</span>
+</pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="basics/syntax/14">
+<ul>
+<li>Todo lo que no sea 0 o "" es <em>verdadero</em></li>
+<li>Las expresiones booleanas devuelven un <em>valor</em> (<strong>no</strong> true o false)</li>
+<li>Para ver el valor de verdad de algo: <code>Boolean(algo)</code></li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/syntax/15">
+<h1>Estructuras de control</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code small" ref="basics/syntax/16">
+<pre class="executable"><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="s2">"hola mundo adi&#xF3;s hola"</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">),</span>
+    <span class="nx">saludos</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="k">switch</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]){</span>
+        <span class="k">case</span> <span class="s2">"hola"</span><span class="o">:</span>
+            <span class="nx">saludos</span><span class="o">++</span>
+    <span class="p">}</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nx">saludos</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"&#xA1;Me saludaron!"</span><span class="p">)</span>
+
+ <span class="k">while</span><span class="p">(</span><span class="nx">saludos</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Y tambi&#xE9;n hay do...while"</span><span class="p">)</span>
+    <span class="nx">saludos</span><span class="o">--</span>
+ <span class="p">}</span></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/syntax/17">
+<h1>Arreglos</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="basics/syntax/18">
+<pre class="executable"><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+    <span class="nx">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">""</span><span class="p">]</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span>
+<span class="nx">b</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">).</span><span class="nx">join</span><span class="p">()</span> <span class="err">#</span><span class="s2">"true,2"</span>
+<span class="s2">"esto es un string"</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">).</span><span class="nx">sort</span><span class="p">()[</span><span class="mi">2</span><span class="p">]</span>
+<span class="err">#</span><span class="p">[</span> <span class="s1">'es'</span><span class="p">,</span> <span class="s1">'esto'</span><span class="p">,</span> <span class="s1">'string'</span><span class="p">,</span> <span class="s1">'un'</span> <span class="p">]</span>
+<span class="err">#</span><span class="nx">esto</span>
+</pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="basics/syntax/19">
+<ul>
+<li>Pueden ser heterog&#xE9;neos</li>
+<li>Son m&#xE1;s <em>listas</em> que arreglos</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="basics/syntax/20">
+<pre class="executable"><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">pop</span><span class="p">()</span> <span class="c1">//3, [1,2]</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1">//[1,2,4]</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">shift</span><span class="p">()</span> <span class="c1">//[2,4]</span>
+</pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/syntax/21">
+<h1>Objetos</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="basics/syntax/22">
+<pre class="executable"><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">{</span><span class="nx">foo</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">bar</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'baz'</span><span class="o">:</span> <span class="mi">6</span><span class="p">}</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">foo</span>
+<span class="nx">a</span><span class="p">[</span><span class="s1">'bar'</span><span class="p">]</span>
+<span class="k">typeof</span> <span class="nx">a</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">otro</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="nx">a</span><span class="p">[</span><span class="s1">'otro'</span><span class="p">]</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">p</span> <span class="k">in</span> <span class="nx">a</span><span class="p">)</span>
+    <span class="nx">a</span><span class="p">[</span><span class="nx">p</span><span class="p">]</span> <span class="o">=</span> <span class="nx">p</span>
+<span class="nx">a</span>
+</pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="basics/syntax/23">
+<ul>
+<li><em>Todo</em> es un objeto</li>
+<li>Las llaves pueden ser identificadores o strings</li>
+<li>Los objetos son <em>flexibles</em></li>
+<li>La notaci&#xF3;n de objetos es <em>sucinta</em></li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/syntax/24">
+<h1>Funciones</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="basics/syntax/25">
+<pre class="executable"><span class="kd">function</span> <span class="nx">suma</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span>
+<span class="p">}</span>
+<span class="nx">suma</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">resta</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">x</span><span class="o">-</span><span class="nx">y</span>
+<span class="p">}</span>
+<span class="nx">resta</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="basics/syntax/26">
+<pre class="executable"><span class="kd">function</span> <span class="nx">meVale</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span>
+    <span class="nx">x</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">||</span> <span class="nx">b</span> <span class="o">||</span> <span class="s2">"no me mandaste nada :("</span>
+    <span class="k">return</span> <span class="nx">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">meVale</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nx">meVale</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nx">meVale</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nx">meVale</span><span class="p">()</span>
+</pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="basics/syntax/27">
+<pre class="executable"><span class="kd">function</span> <span class="nx">sum</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">callee</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">arguments</span><span class="p">)</span>
+    <span class="kd">var</span> <span class="nx">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="nx">res</span> <span class="o">+=</span> <span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="nx">res</span>
+<span class="p">}</span>
+<span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+</pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code small" ref="basics/syntax/28">
+<pre class="executable"><span class="k">typeof</span><span class="p">(</span><span class="kd">function</span><span class="p">(){})</span>
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">metodo</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">y</span><span class="p">){</span><span class="k">return</span> <span class="nx">y</span><span class="o">*</span><span class="nx">y</span><span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">x</span><span class="p">.</span><span class="nx">metodo</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nx">x</span><span class="p">.</span><span class="nx">otro</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">n</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">n</span><span class="o">*</span><span class="nx">n</span><span class="o">*</span><span class="nx">n</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">x</span><span class="p">.</span><span class="nx">otro</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nx">x</span><span class="p">.</span><span class="nx">otro</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="nx">x</span><span class="p">.</span><span class="nx">otro</span><span class="p">.</span><span class="nx">name</span> <span class="err">#</span><span class="nx">es</span> <span class="nx">an</span><span class="err">&#xF3;</span><span class="nx">nima</span><span class="o">!</span>
+<span class="nx">x</span><span class="p">.</span><span class="nx">conNombre</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">hola</span><span class="p">(){}</span>
+<span class="nx">x</span><span class="p">[</span><span class="s1">'conNombre'</span><span class="p">].</span><span class="nx">name</span></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="basics/syntax/29">
+<ul>
+<li>Como las funciones <em>son objetos tambi&#xE9;n</em>, pod&#xE9;s:</li>
+<li>&#xA1;Mandarlas de par&#xE1;metros o devolverlas desde otras funciones!</li>
+<li><code>Array</code> tiene algunas <a href="">operaciones de iteraci&#xF3;n interesantes</a></li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="basics/syntax/30">
+<pre class="executable"><span class="kd">var</span> <span class="nx">squares</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">n</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">n</span><span class="o">*</span><span class="nx">n</span><span class="p">;</span>
+<span class="p">})</span>
+<span class="kd">var</span> <span class="nx">odds</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">].</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">n</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">n</span><span class="o">%</span><span class="mi">2</span>
+<span class="p">})</span>
+</pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="basics/syntax/31">
+<pre class="executable"><span class="kd">function</span> <span class="nx">negate</span><span class="p">(</span><span class="nx">f</span><span class="p">){</span>
+    <span class="k">return</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="o">!</span><span class="nx">f</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">verdad</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">mentira</span> <span class="o">=</span> <span class="nx">negate</span><span class="p">(</span><span class="nx">verdad</span><span class="p">)</span>
+<span class="nx">mentira</span><span class="p">()</span>
+</pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/syntax/32">
+<h1>Programaci&#xF3;n orienta a objetos</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code smaller" ref="basics/syntax/33">
+<pre class="executable"><span class="kd">var</span> <span class="nx">Response</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">body</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">headers</span><span class="p">){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">body</span> <span class="o">=</span> <span class="k">typeof</span> <span class="nx">body</span> <span class="o">==</span> <span class="s1">'object'</span> <span class="o">?</span> 
+                <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span><span class="o">:</span>
+                <span class="nx">body</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">status</span> <span class="o">||</span> <span class="mi">200</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">headers</span> <span class="o">=</span> <span class="nx">headers</span> <span class="o">||</span> <span class="p">{</span><span class="s1">'Content-Type'</span><span class="o">:</span> <span class="s2">"text/plain"</span><span class="p">}</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">to_a</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">status</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">headers</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">({</span><span class="nx">hola</span><span class="o">:</span> <span class="s2">"mundo"</span><span class="p">})</span>
+<span class="nx">r</span><span class="p">.</span><span class="nx">to_a</span><span class="p">()</span>
+</pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="basics/syntax/34">
+<ul>
+<li>Cuando llam&#xE1;s una funci&#xF3;n con <code>new</code>, todo lo que est&#xE9; en <code>this</code>
+se pondr&#xE1; dentro de un nuevo objeto</li>
+<li>Todos los objetos tienen un <em>prototipo</em></li>
+<li>El prototipo tambi&#xE9;n es flexible</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="basics/syntax/35">
+<pre class="executable"><span class="nx">Response</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getBody</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">body</span>
+<span class="p">}</span>
+<span class="nx">r</span><span class="p">.</span><span class="nx">getBody</span><span class="p">()</span>
+</pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="basics/syntax/36">
+<pre class="executable"><span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">merge</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">other</span><span class="p">){</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">prop</span> <span class="k">in</span> <span class="nx">other</span><span class="p">){</span>
+        <span class="c1">//por el prototipo</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">other</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">prop</span><span class="p">))</span>
+            <span class="k">this</span><span class="p">[</span><span class="nx">prop</span><span class="p">]</span> <span class="o">=</span> <span class="nx">other</span><span class="p">[</span><span class="nx">prop</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>   
+</pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="basics/syntax/37">
+<h2>Referencias</h2>
+
+<ul>
+<li><a href="http://www.delicious.com/lfborjas/barcamp4+javascript">http://www.delicious.com/lfborjas/barcamp4+javascript</a></li>
+<li><a href="http://nodejs.org/">Node.js</a></li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="basics/syntax/38">
+<h2>Ejemplos en js:</h2>
+
+<ul>
+<li><a href="http://lfborjas.com/experiments/reversi/board.html">Un reversi</a></li>
+<li><a href="https://github.com/lfborjas/minimalisp/tree/javascript">Un int&#xE9;rprete del lenguaje scheme</a></li>
+<li><a href="https://github.com/lfborjas/eddie/tree/javascript">Una aplicaci&#xF3;n en node.js</a></li>
+<li><a href="http://lfborjas.com/progra2/dwemthy.html">Un juego basado en texto</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+
+</body>
+</html>
