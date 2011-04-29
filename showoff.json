@@ -1,0 +1,9 @@
+{ 
+    "name": "Javascript: El lenguaje más incomprendido", 
+    "sections": [
+        {"section": "basics"},
+        {"section": "functions"},
+        {"section": "objects"}
+     ],
+     "options": {"syntax":"bw"}
+}
