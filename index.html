@@ -183,10 +183,10 @@ la continuaci&#xF3;n de la anterior</li>
 <pre class="executable"><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
     <span class="nx">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">""</span><span class="p">]</span>
 <span class="nx">a</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span>
-<span class="nx">b</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">).</span><span class="nx">join</span><span class="p">()</span> <span class="err">#</span><span class="s2">"true,2"</span>
+<span class="nx">b</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">).</span><span class="nx">join</span><span class="p">()</span> <span class="c1">//"true,2"</span>
 <span class="s2">"esto es un string"</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">).</span><span class="nx">sort</span><span class="p">()[</span><span class="mi">2</span><span class="p">]</span>
-<span class="err">#</span><span class="p">[</span> <span class="s1">'es'</span><span class="p">,</span> <span class="s1">'esto'</span><span class="p">,</span> <span class="s1">'string'</span><span class="p">,</span> <span class="s1">'un'</span> <span class="p">]</span>
-<span class="err">#</span><span class="nx">esto</span>
+<span class="c1">//[ 'es', 'esto', 'string', 'un' ]</span>
+<span class="c1">//esto</span>
 </pre>
 </div>
 </div><div class="slide" data-transition="none"><div class="content bullets" ref="basics/syntax/19">
@@ -276,7 +276,7 @@ la continuaci&#xF3;n de la anterior</li>
 <span class="p">}</span>
 <span class="nx">x</span><span class="p">.</span><span class="nx">otro</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="nx">x</span><span class="p">.</span><span class="nx">otro</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-<span class="nx">x</span><span class="p">.</span><span class="nx">otro</span><span class="p">.</span><span class="nx">name</span> <span class="err">#</span><span class="nx">es</span> <span class="nx">an</span><span class="err">&#xF3;</span><span class="nx">nima</span><span class="o">!</span>
+<span class="nx">x</span><span class="p">.</span><span class="nx">otro</span><span class="p">.</span><span class="nx">name</span> <span class="c1">//es an&#xF3;nima!</span>
 <span class="nx">x</span><span class="p">.</span><span class="nx">conNombre</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">hola</span><span class="p">(){}</span>
 <span class="nx">x</span><span class="p">[</span><span class="s1">'conNombre'</span><span class="p">].</span><span class="nx">name</span></pre>
 </div>
